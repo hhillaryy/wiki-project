@@ -3,7 +3,4 @@ $(document).ready(function(){
     list.forEach(function(line) {
       $("#pages").append("<li><a href='pages/" + line + ".html'>" + line + "</a></li>");
     });
-
-
-  event.preventDefault();
 });
