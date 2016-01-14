@@ -6,6 +6,10 @@ p {
   font-size: 20px;
 }
 
+#pages {
+  font-size: 20px;
+}
+
 .ul-list {
   font-weight: bolder;
   color: purple;
@@ -31,4 +35,26 @@ p {
 h1 {
   padding-top: 50px;
 
+}
+
+#note {
+  font-style: italic;
+}
+
+#not {
+  font-weight: bolder;
+}
+
+.example {
+  font-size: 15px;
+  color: purple;
+}
+
+#upper {
+  font-weight: bolder;
+}
+
+#function {
+  font-size: 20px;
+  list-style-type: none;
 }
