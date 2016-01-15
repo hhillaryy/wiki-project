@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+  <script src="../js/scripts.js"></script>
+  <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all">
+  <title>Forms</title>
+  </head>
+
+  <body>
+  <div class="container">
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-header">
+        <ul class="nav navbar-nav">
+        <li><a href="../index.html">Home</a></li>
+        <li><a>About</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <h1>Forms:</h1>
+      <p>Forms are most often comprised of widgets and controls like text boxes, drop-down menus, or check boxes for users to fill in on a page as well as buttons like submit. We create the text of forms in HTML and use javascript to make it interactive so the user can fill in the content. Below is an example that shows a small section of an HTML form, the first and last name fields. <span id="ital">Note: The asterisks are not part of the code they are just showing that those are separate elements of the webpage.</span></p>
+      <!-- <pre> -->
+      <xmp>
+      <body>
+      <div class ="blah">
+      <div id="user-info">
+        <form>
+          <div class="form-group">
+            <label for="firstname">First Name</label>
+            <input id="firstname" class="form-control" type="text">
+          </div>
+          <div class="form-group">
+            <label for="lastname">Last Name</label>
+            <input id="lastname" class="form-control" type="text">
+          </div>
+        </div>
+        </form>
+
+        *********************
+        <div id="confirm">
+          <p>Hi, <span class="output1"></span>. It looks like your last name is <span class="output2"></span>.
+          </p>
+        </div>
+      </body>
+      </div>
+      </xmp>
+      <!-- </pre> -->
+
+      <p>The example above is only the HTML element of the form and it will display as you'd expect on the page but at this point users will not be able to fill it out or get any sort of message or result. To do that you need Javascript. Below is an example of Javascript that will plug the info the user enters into our form for us.
+      </p>
+
+      <xmp>
+      $(document).ready(function() {
+        $("#user-info form").submit(function(){
+          var fName = $("#firstname").val();
+          var lName = $("#lastname").val();
+
+          $(".output1").text(fName);
+          $(".output2").text(lName);
+
+          $("#confirm").show();
+          event.preventDefault();
+
+        });
+      });
+      </xmp>
+      <p> As you can see the div id user-info and our form ("#user-info form")is what we are referencing from our HTML. Then we ask to run the function when the user hits the submit button by using the method .submit and this code essentially tells us that the variables first (aka fName) and last name (aka lName) will be given a value when the user enters the text into the field. Our function then asks it to plug those values (aka words) into the span ids (".output1"). Now try entering something in the form below!</p>
+
+      <html>
+          <div class="blah">
+            <div class="row">
+              <div id="blank">
+                <form>
+                  <div class="form-group">
+                    <label for="message1">Enter your message here</label>
+                    <input id="message1" class="form-control" type="text">
+                  </div>
+                <button type="submit" class="btn">Convert your message!</button>
+                </form>
+              </div><!--blankdiv-->
+            </div>
+            <p><span class="message1"></span></p>
+          </div>
+
+
+
+
+  </div>
+  </body>
+</html>
